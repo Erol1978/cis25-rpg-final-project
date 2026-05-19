@@ -8,6 +8,10 @@ void Player::addItem(const Item& item) {
     inventory.addItem(item);
 }
 
+bool Player::removeItem(const std::string& itemName) {
+    return inventory.removeItem(itemName);
+}
+
 int Player::inventorySize() const {
     return inventory.size();
 }

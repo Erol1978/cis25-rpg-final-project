@@ -11,4 +11,6 @@ public:
     int size() const;
     bool isEmpty() const;
     Item getItem(int index) const;
+
+    bool removeItem(const std::string& itemName);
 };

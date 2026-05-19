@@ -4,8 +4,6 @@
 #include <iostream>
 
 void test_remove_item_normal() {
-    std::cout << "Remove item (normal)... ";
-
     Player player("Hero", 100, 10);
 
     player.addItem(Item("Potion", 25));
@@ -15,36 +13,26 @@ void test_remove_item_normal() {
 
     assert(removed);
     assert(player.inventorySize() == 1);
-
-    std::cout << "PASSED\n";
 }
 
 void test_remove_item_empty_inventory() {
-    std::cout << "Remove item from empty inventory... ";
-
     Player player("Hero", 100, 10);
 
     bool removed = player.removeItem("Potion");
 
     assert(!removed);
-
-    std::cout << "PASSED\n";
 }
 
-void test_remove_first_item_boundary() {
-    std::cout << "Remove first item boundary... ";
-
-    Player player("Hero", 100, 10);
+void test_use_healing_potion() {
+    Player player("Hero", 50, 10);
 
     player.addItem(Item("Potion", 25));
-    player.addItem(Item("Sword", 50));
 
-    bool removed = player.removeItem("Potion");
+    bool used = player.useHealingPotion();
 
-    assert(removed);
-    assert(player.inventorySize() == 1);
-
-    std::cout << "PASSED\n";
+    assert(used);
+    assert(player.getHealth() == 75);
+    assert(player.inventorySize() == 0);
 }
 
 int main() {
@@ -52,7 +40,7 @@ int main() {
 
     test_remove_item_normal();
     test_remove_item_empty_inventory();
-    test_remove_first_item_boundary();
+    test_use_healing_potion();
 
     std::cout << "All tests passed.\n";
 

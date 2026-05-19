@@ -8,16 +8,21 @@ int main() {
     player.addItem(Item("Potion", 25));
     player.addItem(Item("Sword", 50));
 
-    std::cout << "Before removing item:" << std::endl;
+    std::cout << "Starting status:" << std::endl;
     player.displayStatus();
 
-    if (player.removeItem("Potion")) {
-        std::cout << "Item removed successfully" << std::endl;
+    player.takeDamage(50);
+
+    std::cout << "\nAfter taking damage:" << std::endl;
+    player.displayStatus();
+
+    if (player.useHealingPotion()) {
+        std::cout << "\nPotion used successfully." << std::endl;
     } else {
-        std::cout << "Item not found" << std::endl;
+        std::cout << "\nNo potion available." << std::endl;
     }
 
-    std::cout << "After removing item:" << std::endl;
+    std::cout << "\nFinal status:" << std::endl;
     player.displayStatus();
 
     return 0;

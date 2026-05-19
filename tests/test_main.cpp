@@ -24,8 +24,9 @@ void test_remove_item_empty_inventory() {
 }
 
 void test_use_healing_potion() {
-    Player player("Hero", 50, 10);
+    Player player("Hero", 100, 10);
 
+    player.takeDamage(50);
     player.addItem(Item("Potion", 25));
 
     bool used = player.useHealingPotion();

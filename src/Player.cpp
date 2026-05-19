@@ -23,3 +23,15 @@ void Player::displayStatus() const {
     std::cout << "Attack: " << attackPower << std::endl;
     std::cout << "Inventory Items: " << inventory.size() << std::endl;
 }
+
+
+bool Player::useHealingPotion() {
+    bool removed = inventory.removeItem("Potion");
+
+    if (removed) {
+        heal(25);
+        return true;
+    }
+
+    return false;
+}

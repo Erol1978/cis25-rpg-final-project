@@ -13,4 +13,5 @@ public:
     bool removeItem(const std::string& itemName);
     int inventorySize() const;
     void displayStatus() const;
+    bool useHealingPotion();
 };

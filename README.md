@@ -2,27 +2,37 @@
 
 This is a simple console-based RPG project for CIS 25.
 
-## Current Status
+## Features
 
-**Implemented Features**:
-- Feature 1: Display Player Status  
-  Shows the player's name, health, attack power, and inventory count.
+### Implemented
+- Display Player Status
+- Remove Item From Inventory
+- Use Healing Potion
 
-**Stubbed / Planned Features**:
+### Stubbed / Planned
 - Enemy combat
 - Map movement
-- Item pickup effects
 - Quest tracking
 - Win/lose conditions
 
-**Known Issues**:
-- The game is still small and only demonstrates the first working feature.
-- Combat and movement are planned for later features.
+### Not Yet Implemented
+- Save/load system
+- Multiple enemy encounters
+- Full gameplay loop
 
-## Build and Run
+## Build Instructions
 
-```bash
 cmake -S . -B build
 cmake --build build
+
+## Run Instructions
+
 ./build/rpg_game
+
+## Test Instructions
+
 ctest --test-dir build --verbose
+
+## Author
+
+Ebubekir Erol
